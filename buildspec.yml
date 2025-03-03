@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    SDLC_ENV: "dev "  # Value can dev/qa/prod
-    TF_COMMAND: "apply " # Value can apply/destroy
+    SDLC_ENV: " "  # Value can dev/qa/prod
+    TF_COMMAND: " " # Value can apply/destroy
     TERRAFORM_VERSION: "1.10.5"
   # Required if you want to retrieve custom environment variables stored in AWS Systems Manager Parameter Store.
   # parameter-store:
@@ -38,7 +38,7 @@ phases:
       - terraform validate
       - terraform plan
       - terraform $TF_COMMAND -auto-approve
-       - terraform $TF_COMMAND -input=false -var-file=dev.tfvars -auto-approve
+      # - terraform $TF_COMMAND -input=false -var-file=dev.tfvars -auto-approve
   post_build:
     on-failure: CONTINUE
     commands:
