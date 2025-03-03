@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    SDLC_ENV: "$1"  # Value can dev/qa/prod
-    TF_COMMAND: "$2" # Value can apply/destroy
+    SDLC_ENV: "dev "  # Value can dev/qa/prod
+    TF_COMMAND: "apply " # Value can apply/destroy
     TERRAFORM_VERSION: "1.10.5"
   # Required if you want to retrieve custom environment variables stored in AWS Systems Manager Parameter Store.
   # parameter-store:
